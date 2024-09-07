@@ -418,14 +418,15 @@ export const useApp = (): IAppExports => {
 		setIsStarted(false);
 		setIsEnded(true);
 		setReload(true);
+		closeAllToast();
 	};
 
 	const onClickReplay = (): void => {
 		setIsStarted(false);
 		setIsEnded(false);
 		setReload(true);
-		onResetGame();
 		closeAllToast();
+		onResetGame();
 	};
 
 	const onClickProfile = (player: EPlayer): void => onUpdateProfile(player);
