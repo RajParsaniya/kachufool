@@ -10,7 +10,7 @@ interface IReportProps {
 }
 
 export const Report = (props: IReportProps): JSX.Element => {
-	const { rank, isLoading, onChange, getRound, getScore } = useReport({ reports: props.reports });
+	const { rank, player, isLoading, onChange, getRound, getScore } = useReport({ reports: props.reports });
 
 	const scoreStyle: object = defineStyle({
 		borderRadius: "md",
@@ -94,24 +94,54 @@ export const Report = (props: IReportProps): JSX.Element => {
 					<VStack w="85%" h="full" spacing={2}>
 						<HStack w="full" h="50%" spacing={3}>
 							<Box w="full" h="full" onClick={() => onChange(EPlayer.YOU)}>
-								<Score label={EPlayer.YOU} score={getScore(EPlayer.YOU)} sx={{ w: "full", h: "full", ...scoreStyle }} />
+								<Score
+									label={EPlayer.YOU}
+									score={getScore(EPlayer.YOU)}
+									isSelected={EPlayer.YOU === player}
+									sx={{ w: "full", h: "full", ...scoreStyle }}
+								/>
 							</Box>
 							<Box w="full" h="full" onClick={() => onChange(EPlayer.BOT_1)}>
-								<Score label={EPlayer.BOT_1} score={getScore(EPlayer.BOT_1)} sx={{ w: "full", h: "full", ...scoreStyle }} />
+								<Score
+									label={EPlayer.BOT_1}
+									score={getScore(EPlayer.BOT_1)}
+									isSelected={EPlayer.BOT_1 === player}
+									sx={{ w: "full", h: "full", ...scoreStyle }}
+								/>
 							</Box>
 							<Box w="full" h="full" onClick={() => onChange(EPlayer.BOT_2)}>
-								<Score label={EPlayer.BOT_2} score={getScore(EPlayer.BOT_2)} sx={{ w: "full", h: "full", ...scoreStyle }} />
+								<Score
+									label={EPlayer.BOT_2}
+									score={getScore(EPlayer.BOT_2)}
+									isSelected={EPlayer.BOT_2 === player}
+									sx={{ w: "full", h: "full", ...scoreStyle }}
+								/>
 							</Box>
 						</HStack>
 						<HStack w="full" h="50%" spacing={3}>
 							<Box w="full" h="full" onClick={() => onChange(EPlayer.BOT_3)}>
-								<Score label={EPlayer.BOT_3} score={getScore(EPlayer.BOT_3)} sx={{ w: "full", h: "full", ...scoreStyle }} />
+								<Score
+									label={EPlayer.BOT_3}
+									score={getScore(EPlayer.BOT_3)}
+									isSelected={EPlayer.BOT_3 === player}
+									sx={{ w: "full", h: "full", ...scoreStyle }}
+								/>
 							</Box>
 							<Box w="full" h="full" onClick={() => onChange(EPlayer.BOT_4)}>
-								<Score label={EPlayer.BOT_4} score={getScore(EPlayer.BOT_4)} sx={{ w: "full", h: "full", ...scoreStyle }} />
+								<Score
+									label={EPlayer.BOT_4}
+									score={getScore(EPlayer.BOT_4)}
+									isSelected={EPlayer.BOT_4 === player}
+									sx={{ w: "full", h: "full", ...scoreStyle }}
+								/>
 							</Box>
 							<Box w="full" h="full" onClick={() => onChange(EPlayer.BOT_5)}>
-								<Score label={EPlayer.BOT_5} score={getScore(EPlayer.BOT_5)} sx={{ w: "full", h: "full", ...scoreStyle }} />
+								<Score
+									label={EPlayer.BOT_5}
+									score={getScore(EPlayer.BOT_5)}
+									isSelected={EPlayer.BOT_5 === player}
+									sx={{ w: "full", h: "full", ...scoreStyle }}
+								/>
 							</Box>
 						</HStack>
 					</VStack>

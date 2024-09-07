@@ -3,6 +3,7 @@ import { Box, Center, Flex, Text } from "@chakra-ui/react";
 interface IScoreProps {
 	label: string;
 	score: number;
+	isSelected?: boolean;
 	sx?: object;
 }
 
@@ -11,7 +12,7 @@ export const Score = (props: IScoreProps): JSX.Element => {
 		<Box w="full" h="full" sx={props.sx}>
 			<Flex w="full" h="full" direction="row" borderWidth={1} borderRadius="lg" overflow="hidden">
 				<Center w={0} h="full" flex="1 1 auto" backgroundColor="brand.secondary.default">
-					<Text w="fit-content" h="fit-content" variant="label">
+					<Text w="fit-content" h="fit-content" variant="label" textDecoration={props.isSelected ? "underline" : "none"}>
 						{props.label}
 					</Text>
 				</Center>
