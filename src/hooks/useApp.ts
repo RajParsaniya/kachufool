@@ -288,6 +288,7 @@ export const useApp = (): IAppExports => {
 
 	const onClosingGame = useCallback(() => {
 		const previousStage: Stage = getPreviousStage(stage);
+		setConfig((configValue) => setTrumpConfig(configValue));
 		setConfig((configValue) => setBodyConfig(configValue, getRoundEndingMessage(previousStage.round)));
 		setReports((reportsValue) => updateReportRoundScore(reportsValue, previousStage));
 		setTimeout(() => {
@@ -312,6 +313,7 @@ export const useApp = (): IAppExports => {
 		setBestScore,
 		setBodyConfig,
 		setIsInitializingStatus,
+		setTrumpConfig,
 		stage,
 		updateReportPlayerScore,
 		updateReportRoundScore,
