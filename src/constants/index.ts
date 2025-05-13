@@ -27,8 +27,8 @@ export const RANDOM_JUDGMENT_PREDICTED_MESSAGE: string = '"{0}" predicated ({1})
 export const NOT_STARTED_TOAST: string = "Game is not started";
 export const ADD_PROFILE_TOAST: string = '"{0}" added successfully';
 export const REMOVE_PROFILE_TOAST: string = '"{0}" removed successfully';
-export const ADD_PROFILE_LATER_TOAST: string = '"{0}" will add in next round';
-export const REMOVE_PROFILE_LATER_TOAST: string = '"{0}" will remove in next round';
+export const ADD_PROFILE_LATER_TOAST: string = '"{0}" will play in next round';
+export const REMOVE_PROFILE_LATER_TOAST: string = '"{0}" will not play in next round';
 
 export const TABLE_ANIMATION: string = "{0} 2s ease-in-out forwards";
 export const CARD_ANIMATION: string = "{0} 1s ease-in-out forwards";
